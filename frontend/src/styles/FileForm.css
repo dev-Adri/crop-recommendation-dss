@@ -1,0 +1,17 @@
+.file-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    height: 100vh;
+}
+
+.file-h1 {
+    color: white;
+}
+
+.upload-file {
+    height: 85vh;
+}

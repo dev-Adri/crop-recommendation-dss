@@ -1,0 +1,12 @@
+@relation Crop_recommendation
+@attribute n REAL
+@attribute p REAL
+@attribute k REAL
+@attribute temperature REAL
+@attribute humidity REAL
+@attribute ph REAL
+@attribute rainfall REAL
+@attribute label {apple,banana,blackgram,chickpea,coconut,coffee,cotton,grapes,jute,kidneybeans,lentil,maize,mango,mothbeans,mungbean,muskmelon,orange,papaya,pigeonpeas,pomegranate,rice,watermelon}
+
+@data
+0.5285714285714286,0.21428571428571427,0.175,0.5069013976025664,0.7687514436037338,0.5405078809463392,0.7999054664892735,?

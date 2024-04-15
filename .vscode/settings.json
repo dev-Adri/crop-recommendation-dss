@@ -1,0 +1,4 @@
+{
+    "java.project.sourcePaths": ["backend\\java"],
+    "java.project.referencedLibraries": ["backend\\java\\weka.jar"]
+}
