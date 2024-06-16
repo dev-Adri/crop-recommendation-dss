@@ -23,6 +23,8 @@ public class predictor {
         } else if (args[0].equals("test")) {
             p.test(args[1]);
         }
+
+        // p.train();
     }
 
 
@@ -63,6 +65,7 @@ public class predictor {
         // Evaluate the model
         Evaluation eval = new Evaluation(normalizedData);
         eval.crossValidateModel(loadedRf, testData, 10, new java.util.Random(1));
+        System.out.println(eval.toSummaryString());
     }
 
     public void test(String path) throws Exception {
@@ -87,8 +90,7 @@ public class predictor {
         for (int i = 0; i < normalizedData.numInstances(); i++) {
             double[] distribution = rf.distributionForInstance(normalizedData.instance(i));
 
-            // Prepare to print top 3 class probabilities
-            int[] indices = getTopIndices(distribution, 3);  // Method to get indices of top 3 values
+            int[] indices = getTopIndices(distribution, 3);
             for (int idx : indices) {
                 printWriter.printf("%s:%.4f%%\n", normalizedData.classAttribute().value(idx), distribution[idx] * 100);
             }

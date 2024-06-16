@@ -7,6 +7,14 @@
     color: white;
 }
 
+.output-text {
+    text-align: center;
+}
+
+.output-pred {
+    color: #000000;
+}
+
 .lds-ripple,
 .lds-ripple div {
     box-sizing: border-box;

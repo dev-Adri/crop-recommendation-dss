@@ -1,9 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "../styles/Form.css";
 
-function Form({ onSubmit }) {
+function Form({ onSubmit, readyCrop }) {
     const [data, setData] = useState({
         f1: "",
         f2: "",
@@ -27,13 +27,49 @@ function Form({ onSubmit }) {
         onSubmit(data);
     };
 
+    useEffect(() => {
+        if (readyCrop.length > 0) {
+            if (readyCrop === "rice") {
+                setData({
+                    f1: "90",
+                    f2: "42",
+                    f3: "43",
+                    f4: "20.8",
+                    f5: "82.0",
+                    f6: "6.5",
+                    f7: "202.9",
+                });
+            } else if (readyCrop === "banana") {
+                setData({
+                    f1: "91",
+                    f2: "94",
+                    f3: "46",
+                    f4: "29.3",
+                    f5: "76.2",
+                    f6: "6.1",
+                    f7: "92.8",
+                });
+            } else if (readyCrop === "apple") {
+                setData({
+                    f1: "24",
+                    f2: "128",
+                    f3: "192",
+                    f4: "22.7",
+                    f5: "90.6",
+                    f6: "5.5",
+                    f7: "110.4",
+                });
+            }
+        }
+    }, [readyCrop]);
+
     return (
         <div className="form-container">
             <h1>Enter your field data</h1>
 
             <form onSubmit={handleSubmit} className="data-form">
                 <label className="data-label">
-                    N<br></br>
+                    % of Nitrogen<br></br>
                     <input
                         type="text"
                         value={data.f1}
@@ -43,7 +79,7 @@ function Form({ onSubmit }) {
                     ></input>
                 </label>
                 <label className="data-label">
-                    P<br></br>
+                    % of Phosphorus<br></br>
                     <input
                         type="text"
                         value={data.f2}
@@ -53,7 +89,7 @@ function Form({ onSubmit }) {
                     ></input>
                 </label>
                 <label className="data-label">
-                    K<br></br>
+                    % of of Potassium<br></br>
                     <input
                         type="text"
                         value={data.f3}

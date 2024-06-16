@@ -9,3 +9,37 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.rice {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.banana {
+    position: absolute;
+    top: 11%;
+    left: 5%;
+}
+.apple {
+    position: absolute;
+    top: 17%;
+    left: 5%;
+}
+
+.apple,
+.rice,
+.banana {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.34);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    transition: color 0.1s ease;
+}
+
+.apple:hover,
+.rice:hover,
+.banana:hover {
+    color: rgb(255, 134, 134);
+}

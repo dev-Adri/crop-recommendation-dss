@@ -15,8 +15,13 @@ function PredOutput({ visibility, output }) {
                 </div>
             ) : null}
             {output ? (
-                <div>
-                    <p> Prediction: {output} </p>
+                <div className="output-text">
+                    <h1>
+                        Recommended plant:
+                        <div className="output-pred">
+                            <u>{output}</u>
+                        </div>
+                    </h1>
                 </div>
             ) : null}
         </div>

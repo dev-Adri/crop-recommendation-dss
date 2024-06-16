@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "./components/Form";
-import FileForm from "./components/Fileform";
 import PredOutput from "./components/PredOutput";
 
 import "./styles/App.css";
@@ -10,6 +9,7 @@ import "./styles/App.css";
 function App() {
     const [visibility, setVisibility] = useState(false);
     const [output, setOutput] = useState("");
+    const [readyCrop, setReadyCrop] = useState("");
 
     function handleSubmit(data) {
         setVisibility(true);
@@ -36,9 +36,22 @@ function App() {
         // setVisibility(false);
     }
 
+    function onCropClick(e) {
+        setReadyCrop(e.target.name);
+    }
+
     return (
         <div className="page-container">
-            <Form onSubmit={handleSubmit} />
+            <button name="rice" className="rice" onClick={onCropClick}>
+                RICE
+            </button>
+            <button name="banana" className="banana" onClick={onCropClick}>
+                BANANA
+            </button>
+            <button name="apple" className="apple" onClick={onCropClick}>
+                APPLE
+            </button>
+            <Form onSubmit={handleSubmit} readyCrop={readyCrop} />
             <PredOutput visibility={visibility} output={output} />
             {/* <FileForm />
             <h1 className="or">OR</h1> */}
